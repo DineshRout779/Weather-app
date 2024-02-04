@@ -5,8 +5,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 2em 0;
-  background: linear-gradient(180deg, rgb(17, 59, 199), rgb(158, 164, 219));
+  background: linear-gradient(180deg, rgb(17, 51, 162), rgb(66, 80, 206));
 }
 
 .App.night {
@@ -42,16 +41,17 @@
 }
 
 .weather {
-  padding: 1em 0;
+  margin-bottom: 1em;
 }
 
 .icon {
-  width: 130px;
-  height: 130px;
+  width: fit-content;
+  max-width: 240px;
+  aspect-ratio: 1;
 }
 
 .bg-text {
-  font-size: 3em;
+  font-size: 3.5em;
   margin: 0;
   font-weight: bold;
 }
@@ -62,5 +62,4 @@
 
 .sm-text {
   font-size: 0.8em;
-  font-style: italic;
 }
