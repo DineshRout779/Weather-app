@@ -24,15 +24,21 @@ const App = () => {
     }
   };
 
-  const time = new Date();
-  let hours = time.getHours();
+  const now = new Date();
+  const hours = now.getHours();
+
+  // You may need to adjust these values based on your location and time of year
+  const sunsetHour = 18; // Example: 6 PM
+  const sunriseHour = 6; // Example: 6 AM
+
+  const isNight = hours < sunriseHour || hours >= sunsetHour;
 
   useEffect(() => {
     const fetchInitialWeatherData = async () => {
       fetch(`${api.base}weather?q=New+Delhi&units=metric&APPID=${api.key}`)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           setWeather(data);
         });
     };
@@ -40,7 +46,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className={hours > 19 ? 'App night' : 'App'}>
+    <div className={isNight ? 'App night' : 'App'}>
       <div className='container'>
         <div className='app-header'>
           <input
