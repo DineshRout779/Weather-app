@@ -1,5 +1,4 @@
 const Icon = ({ iconCode }) => {
-  console.log(iconCode);
   return (
     <div className='weather-icon'>
       <img
